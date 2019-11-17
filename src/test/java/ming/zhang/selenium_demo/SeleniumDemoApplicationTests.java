@@ -30,11 +30,12 @@ class SeleniumDemoApplicationTests {
         WebElement elementByXPath2 = browser.findElementByXPath("//p[@class='global-header__region__tip']");
         // 控制鼠标
         action.moveToElement(elementByXPath2).perform();
-        Thread.sleep(5000);
         WebElement elementByXPath1 = browser.findElementByXPath("//div[@class='global-header__region__list']//span[2]");
         System.out.println("城市：" + elementByXPath1.getText());
         // 点击事件
         elementByXPath1.click();
+        System.out.println("当前页面URL：" + browser.getCurrentUrl());
+        Thread.sleep(5000);
         browser.quit();
     }
 
